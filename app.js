@@ -55,8 +55,26 @@ app.get('/v1/explorers/:id', (req,res) => {
     console.log(explorers[id])
 })
 
+// Codigo para usar POST
 app.post('/v1/explorers', (req, res) => {
     console.log(`API Explorers POST request ${new Date()}`)
     const requestBody = req.body // Parametros del cliente
     res.status(201).json({message: "Created"})
+})
+
+// Codigo para usar PUT
+app.put('/v1/explorers/:id', (req, res)=>{
+    console.log(`API Explorers PUT request ${new Date()}`)
+    console.log(`Update Explorer with id ${req.params.id}`)
+    const requestBody = req.body 
+    res.status(200).json({message: "Updated!"})
+})
+
+// Codigo para usar DELETE
+app.delete('/v1/explorers/:id', (req, res) => {
+    console.log(`API Explorers DELETE request ${new Date()}`)
+    console.log(`Delete explorer with id ${req.params.id}`)
+    const requestBody = req.body // Parametros del cliente
+    res.status(200).json({message: "Deleted"})
+    
 })
