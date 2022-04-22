@@ -54,3 +54,9 @@ app.get('/v1/explorers/:id', (req,res) => {
     res.status(200).json(explorers[id])
     console.log(explorers[id])
 })
+
+app.post('/v1/explorers', (req, res) => {
+    console.log(`API Explorers POST request ${new Date()}`)
+    const requestBody = req.body // Parametros del cliente
+    res.status(201).json({message: "Created"})
+})
